@@ -34,10 +34,10 @@ https://insecure-website.com/loadImage?filename=../../../etc/passwd
 https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini
 ```
 ## Lab: File path traversal, simple case
-Link
+* [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab1.md)
 
-
-# Access control
+# 2. Access control
+* Access control (hay "Kiểm soát truy cập") là việc một ứng dụng web hạn chế ai hay cái gì 
 
 # Authentication
 
