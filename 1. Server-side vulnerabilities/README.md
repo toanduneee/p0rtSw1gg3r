@@ -34,10 +34,32 @@ https://insecure-website.com/loadImage?filename=../../../etc/passwd
 https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini
 ```
 ## Lab: File path traversal, simple case
-* [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab1.md)
+> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab1.md)
 
 # 2. Access control
-* Access control (hay "Kiểm soát truy cập") là việc một ứng dụng web hạn chế ai hay cái gì 
+* Access control (hay "Kiểm soát truy cập") là việc áp dụng các hạn chế đối với ai hay cái gì được quyền hành động hoặc truy cập tài nguyên. Trong một trang web, sự kiểm soát truy cập này sẽ phụ thuộc vào 2 yếu tố chính là Authentication (Xác thực) và Session Management (Quản lý phiên):
+  * Authentication: Xác nhận rằng bạn chính là cái người mà họ nói. Ví dụ như FB, khi bạn đăng nhập thì cũng chính là việc bạn đang cho bên FB xác nhận lại là bạn có phải cái người dùng đó không, phải chủ tài khoản không. Có nhiều hình thức xác thực như kiểu: Vân tay, mã PIN, khuôn mặt, mã OTP,... Thì những cái này chính là Authentication.
+  * Session management: Xác định các request HTTP tiếp theo được thực hiện bởi chính người dùng đó. Nói dễ hiểu thì là sau khi bạn đăng nhập FB rồi thì cái trang web đấy sẽ tạo ra 1 cái session của riêng bạn và nó sẽ ghi nhớ cái session đấy, khi đấy bạn sử dụng các chức năng của trang web thì nó sẽ ghi nhớ là "à! đây là bạn đang dùng chức năng này này. không cần phải hỏi lại mật khẩu nữa đâu nhỉ".
+  * Access control: Cái này thì nó sẽ xác định xem xem là bạn có quyền, có được phép thực hiện những cái hành động mà bạn đang làm hay không. Kiểu mấy bài đăng trên FB set chỉ bạn bè, thì chỉ những người là bạn bè mới có quyền xem được bài đăng đấy, còn những người khác không có quyền xem
+* Các kiểm soát truy cập bị lỗi rất phổ biến và thường là một lỗ hổng bảo mật nghiêm trọng. Việc thiết kế và quản lý các kiểm soát truy cập là một vấn đề phức tạp và biến đổi không ngừng, áp dụng các ràng buộc về kinh doanh, tổ chức và pháp lý vào việc triển khai kỹ thuật. Các quyết định thiết kế kiểm soát truy cập phải do con người đưa ra, nên khả năng xảy ra lỗi là rất cao
+
+## Leo thang đặc quyền theo chiều dọc (gọi tắt là leo thang đặc quyền)
+* Nếu một người dùng có thể giành được quyền truy cập vào một chức năng nào đấy mà cái chức năng đấy nó không cho phép người dùng kia quyền truy cập thì nó gọi là leo thang đặc quyền theo chiều dọc. Ví dụ, một người dùng bình thường có thể giành được quyền truy cập vào một trang của admin, có chức năng là xóa người dùng chẳng hạn, thì khi đó nó gọi là leo thang đặc quyền theo chiều dọc.
+
+## Chức năng không được bảo vệ
+* Về cơ bản, những cái sự xuất hiện của leo thang đặc quyền chủ yếu là do không có bất kỳ sự bảo vệ nào được thực thi cho những chức năng nhảy cảm. Ví dụ, những cái chức năng của admin sẽ có ở trong trang của admintrator và không có ở trong trang của người dùng bình thường. Tuy nhiên, một người dùng có thể truy cập các chức năng quản trị bằng cách truy cập trực tiếp vào URL của trang quản trị (ví dụ: gõ website.com/admin vào thanh địa chỉ).
+* Ví dụ, có cái web chứa các chức năng cho admin như này:
+```
+https://abcd.com/admin
+```
+* Nếu cái trang nhạy cảm này không có được sự bảo vệ thì với 1 người dùng bình thường, họ "vô tình" thử vào `/admin` và kết quả là họ vẫn vào và sử dụng được chức năng của admin.
+* Trong một vài trường hợp, những cái URL thuộc về admin có thể được tiết lộ ở một vị trí khác, như file `robots.txt` chẳng hạn.
+* Dù cho URL đó không được tiết lộ hay công khai ở bất cứ đâu thì những kẻ tấn công vẫn có thể sử dụng 1 cái wordlist để brute-force đường dẫn các cái web có chứa các chức năng nhạy cảm.
+
+## Lab: Unprotected admin functionality
+> [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-unprotected-admin-functionality)
+> 
+> Link to solution
 
 # Authentication
 
