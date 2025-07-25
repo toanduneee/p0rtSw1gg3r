@@ -8,7 +8,7 @@
 ## Giải:
 * Để giải quyết bài này thì ta cần phải tìm được trang admin panel, xong rồi xóa đi user `carlos`.
 * Trong lý thuyết được nhắc đến thì có nói đến `/robots.txt`
-* File `robots.txt` dễ hiểu thì là file văn bản cơ bản được đặt trong thư mục gốc của trang web có tác dụng điều hướng cho mấy con bot đi crawl dữ liệu của google, được phép hay không được phép lấy dữ liệu ở một trang được liệt kê trong đấy.
+* File `robots.txt` dễ hiểu thì là file văn bản cơ bản được đặt trong thư mục gốc của trang web có tác dụng điều hướng cho mấy con bot đi crawl dữ liệu của google, được phép hay không được phép lấy dữ liệu ở một trang được liệt kê trong đấy. [Thông tin thêm](https://developers.google.com/search/docs/crawling-indexing/robots/intro?hl=en)
 * Thử duyệt đến trang `/robots.txt` thì ta sẽ thấy được như này:
 <img width="1045" height="203" alt="ảnh" src="https://github.com/user-attachments/assets/da0c93e1-5520-4d66-84bb-e8b47a48854b" />
 
