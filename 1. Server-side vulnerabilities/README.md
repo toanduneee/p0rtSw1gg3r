@@ -46,7 +46,7 @@ https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini
 ## Leo thang đặc quyền theo chiều dọc (gọi tắt là leo thang đặc quyền)
 * Nếu một người dùng có thể giành được quyền truy cập vào một chức năng nào đấy mà cái chức năng đấy nó không cho phép người dùng kia quyền truy cập thì nó gọi là leo thang đặc quyền theo chiều dọc. Ví dụ, một người dùng bình thường có thể giành được quyền truy cập vào một trang của admin, có chức năng là xóa người dùng chẳng hạn, thì khi đó nó gọi là leo thang đặc quyền theo chiều dọc.
 
-## Chức năng không được bảo vệ
+## Chức năng không được bảo vệ - Part 1
 * Về cơ bản, những cái sự xuất hiện của leo thang đặc quyền chủ yếu là do không có bất kỳ sự bảo vệ nào được thực thi cho những chức năng nhảy cảm. Ví dụ, những cái chức năng của admin sẽ có ở trong trang của admintrator và không có ở trong trang của người dùng bình thường. Tuy nhiên, một người dùng có thể truy cập các chức năng quản trị bằng cách truy cập trực tiếp vào URL của trang quản trị (ví dụ: gõ website.com/admin vào thanh địa chỉ).
 * Ví dụ, có cái web chứa các chức năng cho admin như này:
 ```
@@ -59,7 +59,38 @@ https://abcd.com/admin
 ## Lab: Unprotected admin functionality
 > [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-unprotected-admin-functionality)
 > 
-> Link to solution
+> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab2:%20Unprotected%20admin%20functionality.md)
+
+## Chức năng không được bảo vệ - Part 2
+* Trong một số trường hợp, những chức năng nhạy cảm này được che dấu bằng cách đưa ra những cái URL khó đoán hơn. Đó chính là ví dụ cho việc được gọi là "security by obscurity". Tuy nhiên, việc ẩn các chức năng nhạy cảm đấy không phải là một cơ chế kiểm soát truy cập hiệu quả vì người dùng vẫn có thể tìm ra được cái URL bị làm rối đấy bằng nhiều cách khác.
+* Thử tưởng tượng một cái web có các chức năng của admin ở trong một trang có URL như này:
+```
+https://abcd.com/administrator-panel-yb556
+```
+* Kẻ tấn công không thể đoán được ngay lập tức. Tuy nhiên, trang web có thể vẫn leak cái URL cho người dùng. URL có thể bị tiết lộ trong đoạn mã JavaScript dùng để xây dựng giao diện người dùng dựa trên vai trò của họ:
+```script
+<script>
+	var isAdmin = false;
+	if (isAdmin) {
+		...
+		var adminPanelTag = document.createElement('a');
+		adminPanelTag.setAttribute('href', 'https://abcd.com/administrator-panel-yb556');
+		adminPanelTag.innerText = 'Admin panel';
+		...
+	}
+</script>
+```
+* Cái script này thêm 1 cái link vào UI của người dùng nếu như người dùng đó là admin. Tuy nhiên, tất cả người dùng đều có thể nhìn thấy script chứa URL đó, bất kể họ có vai trò gì.
+
+## Lab: Unprotected admin functionality with unpredictable URL
+> [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-unprotected-admin-functionality-with-unpredictable-url)
+>
+> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab3:%20Unprotected%20admin%20functionality%20with%20unpredictable%20URL.md)
+
+## 
+
+
+
 
 # Authentication
 
