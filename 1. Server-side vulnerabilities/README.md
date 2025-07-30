@@ -33,7 +33,7 @@ https://insecure-website.com/loadImage?filename=../../../etc/passwd
 ```
 https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini
 ```
-## Lab: File path traversal, simple case
+### Lab: File path traversal, simple case
 > [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab1.md)
 
 # 2. Access control
@@ -56,7 +56,7 @@ https://abcd.com/admin
 * Trong một vài trường hợp, những cái URL thuộc về admin có thể được tiết lộ ở một vị trí khác, như file `robots.txt` chẳng hạn.
 * Dù cho URL đó không được tiết lộ hay công khai ở bất cứ đâu thì những kẻ tấn công vẫn có thể sử dụng 1 cái wordlist để brute-force đường dẫn các cái web có chứa các chức năng nhạy cảm.
 
-## Lab: Unprotected admin functionality
+### Lab: Unprotected admin functionality
 > [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-unprotected-admin-functionality)
 > 
 > [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab2:%20Unprotected%20admin%20functionality.md)
@@ -82,14 +82,29 @@ https://abcd.com/administrator-panel-yb556
 ```
 * Cái script này thêm 1 cái link vào UI của người dùng nếu như người dùng đó là admin. Tuy nhiên, tất cả người dùng đều có thể nhìn thấy script chứa URL đó, bất kể họ có vai trò gì.
 
-## Lab: Unprotected admin functionality with unpredictable URL
+### Lab: Unprotected admin functionality with unpredictable URL
 > [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-unprotected-admin-functionality-with-unpredictable-url)
 >
 > [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab3:%20Unprotected%20admin%20functionality%20with%20unpredictable%20URL.md)
 
+## Các phương pháp kiểm soát truy cập dựa trên tham số
+* Một số ứng dụng xác định quyền truy cập hoặc vai trò của người dùng khi đăng nhập, và sau đấy lưu trữ lại những thông tin này ở một vị trí do người dùng kiểm soát. Đây có thể là:
+	* Một trường ẩn (hidden field).
+ 	* Một cookie
+  * Một tham số chuỗi truy vấn được thiết lập sẵn.
+* Ứng dụng đưa ra quyết định kiểm soát truy cập dựa trên giá trị được gửi. Ví dụ:
+```
+https://insecure-website.com/login/home.jsp?admin=true
+https://insecure-website.com/login/home.jsp?role=1
+```
+* Cách tiếp cận này không an toàn vì người dùng có thể sửa đổi giá trị và truy cập vào các chức năng mà họ không được phép, chẳng hạn như các chức năng quản trị.
+
+### Lab: User role controlled by request parameter
+> [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-role-controlled-by-request-parameter)
+>
+> Link to solution
+
 ## 
-
-
 
 
 # Authentication
