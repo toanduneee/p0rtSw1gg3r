@@ -118,7 +118,18 @@ https://insecure-website.com/myaccount?id=123
 * Trong một số ứng dụng, tham số có thể bị khai thác không có giá trị dễ đoán. Ví dụ, thay vì sử dụng một số tăng dần, một ứng dụng có thể sử dụng các định danh duy nhất toàn cục (GUID) để xác định người dùng. Điều này có thể ngăn kẻ tấn công đoán hoặc dự đoán định danh của người dùng khác. Tuy nhiên, GUID của những người dùng khác có thể bị lộ ở những nơi khác trong ứng dụng có đề cập đến người dùng, chẳng hạn như trong tin nhắn hoặc bài đánh giá của người dùng.
 
 ### Lab: User ID controlled by request parameter, with unpredictable user IDs 
-> Link to lab
+> [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-id-controlled-by-request-parameter-with-unpredictable-user-ids)
+>
+> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab5:%20User%20ID%20controlled%20by%20request%20parameter,%20with%20unpredictable%20user%20IDs%20.md)
+
+## Leo thang đặc quyền từ ngang sang dọc (Horizontal to vertical privilege escalation)
+* Thông thường, một cuộc tấn công leo thang đặc quyền theo chiều ngang có thể được chuyển thành leo thang đặc quyền theo chiều dọc bằng cách xâm phạm một người dùng có đặc quyền cao hơn. Ví dụ, leo thang theo chiều ngang có thể cho phép kẻ tấn công đặt lại hoặc chiếm được mật khẩu của người dùng khác. Nếu kẻ tấn công nhắm mục tiêu vào một người dùng quản trị và xâm phạm tài khoản của họ, thì họ có thể giành được quyền truy cập quản trị và do đó thực hiện leo thang đặc quyền theo chiều dọc.
+* Kẻ tấn công có thể giành được quyền truy cập vào trang tài khoản của người dùng khác bằng cách sử dụng kỹ thuật giả mạo tham số đã được mô tả cho leo thang đặc quyền theo chiều ngang:
+```https://insecure-website.com/myaccount?id=456```
+* Nếu người dùng mục tiêu là quản trị viên ứng dụng, thì kẻ tấn công sẽ có quyền truy cập vào trang tài khoản quản trị. Trang này có thể tiết lộ mật khẩu của quản trị viên hoặc cung cấp phương tiện để thay đổi nó, hoặc có thể cung cấp quyền truy cập trực tiếp vào các chức năng đặc quyền.
+
+### Lab: User ID controlled by request parameter with password disclosure
+> [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-id-controlled-by-request-parameter-with-password-disclosure)
 >
 > Link to solution
 
