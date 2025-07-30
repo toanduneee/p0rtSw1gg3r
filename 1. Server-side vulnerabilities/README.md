@@ -131,9 +131,18 @@ https://insecure-website.com/myaccount?id=123
 ### Lab: User ID controlled by request parameter with password disclosure
 > [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-id-controlled-by-request-parameter-with-password-disclosure)
 >
-> Link to solution
+> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab6%3A%20User%20ID%20controlled%20by%20request%20parameter%20with%20password%20disclosure.md)
 
-# Authentication
+# 3. Authentication
+* Lỗ hổng xác thực (Authentication vulnerabilities)
+* Về mặt khái niệm, các lỗ hổng xác thực rất dễ hiểu. Tuy nhiên, chúng thường rất nghiêm trọng vì mối quan hệ rõ ràng giữa xác thực và bảo mật.
+* Các lỗ hổng xác thực có thể cho phép kẻ tấn công giành quyền truy cập vào dữ liệu và chức năng nhạy cảm. Chúng cũng tạo ra bề mặt tấn công bổ sung cho các cuộc khai thác sâu hơn. Vì lý do này, điều quan trọng là phải học cách xác định và khai thác các lỗ hổng xác thực, cũng như cách vượt qua các biện pháp bảo vệ thông thường.
+* Trong phần này, chúng ta sẽ tìm hiểu sơ qua về:
+  * Các cơ chế xác thực phổ biến nhất được các trang web sử dụng.
+  * Các lỗ hổng tiềm ẩn trong các cơ chế này.
+  * Các lỗ hổng cố hữu trong các cơ chế xác thực khác nhau.
+  * Các lỗ hổng điển hình phát sinh do việc triển khai không đúng cách.
+  * Làm thế nào bạn có thể làm cho các cơ chế xác thực của riêng mình trở nên mạnh mẽ nhất có thể.
 
 # Server-side request forgery (SSRF)
 

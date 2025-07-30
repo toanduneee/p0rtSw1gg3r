@@ -1,4 +1,4 @@
-# Lab: Unprotected admin functionality with unpredictable URL
+# Lab: User role controlled by request parameter
 
 ## Yêu cầu
 > This lab has an admin panel at `/admin`, which identifies administrators using a forgeable cookie.

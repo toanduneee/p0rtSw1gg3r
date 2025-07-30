@@ -1,4 +1,4 @@
-# Lab: Unprotected admin functionality with unpredictable URL
+# Lab: User ID controlled by request parameter, with unpredictable user IDs
 
 ## Yêu cầu
 >  This lab has a horizontal privilege escalation vulnerability on the user account page, but identifies users with GUIDs. <br>
