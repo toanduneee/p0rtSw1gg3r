@@ -102,10 +102,25 @@ https://insecure-website.com/login/home.jsp?role=1
 ### Lab: User role controlled by request parameter
 > [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-role-controlled-by-request-parameter)
 >
+> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab4%3A%20User%20role%20controlled%20by%20request%20parameter.md)
+
+## Tấn công leo thang đặc quyền theo chiều ngang (Horizontal privilege escalation)
+* Tấn công leo thang đặc quyền theo chiều ngang xảy ra khi một người dùng có thể truy cập vào tài nguyên của người dùng khác, thay vì chỉ truy cập vào tài nguyên cùng loại của chính họ. Ví dụ, nếu một nhân viên có thể truy cập hồ sơ của các nhân viên khác cũng như của chính mình, thì đây là leo thang đặc quyền theo chiều ngang.
+* Các cuộc tấn công leo thang đặc quyền theo chiều ngang có thể sử dụng các phương thức khai thác tương tự như tấn công leo thang đặc quyền theo chiều dọc. Ví dụ, một người dùng có thể truy cập trang tài khoản của mình bằng URL sau:
+```
+https://insecure-website.com/myaccount?id=123
+```
+* Nếu kẻ tấn công sửa đổi giá trị tham số id thành của người dùng khác, họ có thể truy cập vào trang tài khoản của người dùng đó cùng với dữ liệu và các chức năng liên quan.
+
+> Note: <br>
+> Đây là một ví dụ về lỗ hổng tham chiếu đối tượng trực tiếp không an toàn (insecure direct object reference - IDOR). Loại lỗ hổng này phát sinh khi các giá trị tham số do người dùng kiểm soát được sử dụng để truy cập trực tiếp vào các tài nguyên hoặc chức năng.
+
+* Trong một số ứng dụng, tham số có thể bị khai thác không có giá trị dễ đoán. Ví dụ, thay vì sử dụng một số tăng dần, một ứng dụng có thể sử dụng các định danh duy nhất toàn cục (GUID) để xác định người dùng. Điều này có thể ngăn kẻ tấn công đoán hoặc dự đoán định danh của người dùng khác. Tuy nhiên, GUID của những người dùng khác có thể bị lộ ở những nơi khác trong ứng dụng có đề cập đến người dùng, chẳng hạn như trong tin nhắn hoặc bài đánh giá của người dùng.
+
+### Lab: User ID controlled by request parameter, with unpredictable user IDs 
+> Link to lab
+>
 > Link to solution
-
-## 
-
 
 # Authentication
 
