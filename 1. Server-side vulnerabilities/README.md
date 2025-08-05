@@ -34,7 +34,7 @@ https://insecure-website.com/loadImage?filename=../../../etc/passwd
 https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini
 ```
 ### Lab: File path traversal, simple case
-> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab1.md)
+> [Solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab1.md)
 
 # 2. Access control
 * Access control (hay "Kiểm soát truy cập") là việc áp dụng các hạn chế đối với ai hay cái gì được quyền hành động hoặc truy cập tài nguyên. Trong một trang web, sự kiểm soát truy cập này sẽ phụ thuộc vào 2 yếu tố chính là Authentication (Xác thực) và Session Management (Quản lý phiên):
@@ -57,9 +57,9 @@ https://abcd.com/admin
 * Dù cho URL đó không được tiết lộ hay công khai ở bất cứ đâu thì những kẻ tấn công vẫn có thể sử dụng 1 cái wordlist để brute-force đường dẫn các cái web có chứa các chức năng nhạy cảm.
 
 ### Lab: Unprotected admin functionality
-> [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-unprotected-admin-functionality)
+> [Lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-unprotected-admin-functionality)
 > 
-> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab2:%20Unprotected%20admin%20functionality.md)
+> [Solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab2:%20Unprotected%20admin%20functionality.md)
 
 ## Chức năng không được bảo vệ - Part 2
 * Trong một số trường hợp, những chức năng nhạy cảm này được che dấu bằng cách đưa ra những cái URL khó đoán hơn. Đó chính là ví dụ cho việc được gọi là "security by obscurity". Tuy nhiên, việc ẩn các chức năng nhạy cảm đấy không phải là một cơ chế kiểm soát truy cập hiệu quả vì người dùng vẫn có thể tìm ra được cái URL bị làm rối đấy bằng nhiều cách khác.
@@ -83,9 +83,9 @@ https://abcd.com/administrator-panel-yb556
 * Cái script này thêm 1 cái link vào UI của người dùng nếu như người dùng đó là admin. Tuy nhiên, tất cả người dùng đều có thể nhìn thấy script chứa URL đó, bất kể họ có vai trò gì.
 
 ### Lab: Unprotected admin functionality with unpredictable URL
-> [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-unprotected-admin-functionality-with-unpredictable-url)
+> [Lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-unprotected-admin-functionality-with-unpredictable-url)
 >
-> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab3:%20Unprotected%20admin%20functionality%20with%20unpredictable%20URL.md)
+> [Solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab3:%20Unprotected%20admin%20functionality%20with%20unpredictable%20URL.md)
 
 ## Các phương pháp kiểm soát truy cập dựa trên tham số
 * Một số ứng dụng xác định quyền truy cập hoặc vai trò của người dùng khi đăng nhập, và sau đấy lưu trữ lại những thông tin này ở một vị trí do người dùng kiểm soát. Đây có thể là:
@@ -100,9 +100,9 @@ https://insecure-website.com/login/home.jsp?role=1
 * Cách tiếp cận này không an toàn vì người dùng có thể sửa đổi giá trị và truy cập vào các chức năng mà họ không được phép, chẳng hạn như các chức năng quản trị.
 
 ### Lab: User role controlled by request parameter
-> [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-role-controlled-by-request-parameter)
+> [Lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-role-controlled-by-request-parameter)
 >
-> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab4%3A%20User%20role%20controlled%20by%20request%20parameter.md)
+> [Solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab4%3A%20User%20role%20controlled%20by%20request%20parameter.md)
 
 ## Tấn công leo thang đặc quyền theo chiều ngang (Horizontal privilege escalation)
 * Tấn công leo thang đặc quyền theo chiều ngang xảy ra khi một người dùng có thể truy cập vào tài nguyên của người dùng khác, thay vì chỉ truy cập vào tài nguyên cùng loại của chính họ. Ví dụ, nếu một nhân viên có thể truy cập hồ sơ của các nhân viên khác cũng như của chính mình, thì đây là leo thang đặc quyền theo chiều ngang.
@@ -118,9 +118,9 @@ https://insecure-website.com/myaccount?id=123
 * Trong một số ứng dụng, tham số có thể bị khai thác không có giá trị dễ đoán. Ví dụ, thay vì sử dụng một số tăng dần, một ứng dụng có thể sử dụng các định danh duy nhất toàn cục (GUID) để xác định người dùng. Điều này có thể ngăn kẻ tấn công đoán hoặc dự đoán định danh của người dùng khác. Tuy nhiên, GUID của những người dùng khác có thể bị lộ ở những nơi khác trong ứng dụng có đề cập đến người dùng, chẳng hạn như trong tin nhắn hoặc bài đánh giá của người dùng.
 
 ### Lab: User ID controlled by request parameter, with unpredictable user IDs 
-> [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-id-controlled-by-request-parameter-with-unpredictable-user-ids)
+> [Lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-id-controlled-by-request-parameter-with-unpredictable-user-ids)
 >
-> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab5:%20User%20ID%20controlled%20by%20request%20parameter,%20with%20unpredictable%20user%20IDs%20.md)
+> [Solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab5:%20User%20ID%20controlled%20by%20request%20parameter,%20with%20unpredictable%20user%20IDs%20.md)
 
 ## Leo thang đặc quyền từ ngang sang dọc (Horizontal to vertical privilege escalation)
 * Thông thường, một cuộc tấn công leo thang đặc quyền theo chiều ngang có thể được chuyển thành leo thang đặc quyền theo chiều dọc bằng cách xâm phạm một người dùng có đặc quyền cao hơn. Ví dụ, leo thang theo chiều ngang có thể cho phép kẻ tấn công đặt lại hoặc chiếm được mật khẩu của người dùng khác. Nếu kẻ tấn công nhắm mục tiêu vào một người dùng quản trị và xâm phạm tài khoản của họ, thì họ có thể giành được quyền truy cập quản trị và do đó thực hiện leo thang đặc quyền theo chiều dọc.
@@ -129,13 +129,13 @@ https://insecure-website.com/myaccount?id=123
 * Nếu người dùng mục tiêu là quản trị viên ứng dụng, thì kẻ tấn công sẽ có quyền truy cập vào trang tài khoản quản trị. Trang này có thể tiết lộ mật khẩu của quản trị viên hoặc cung cấp phương tiện để thay đổi nó, hoặc có thể cung cấp quyền truy cập trực tiếp vào các chức năng đặc quyền.
 
 ### Lab: User ID controlled by request parameter with password disclosure
-> [Link to lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-id-controlled-by-request-parameter-with-password-disclosure)
+> [Lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/access-control-apprentice/access-control/lab-user-id-controlled-by-request-parameter-with-password-disclosure)
 >
-> [Link to solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab6%3A%20User%20ID%20controlled%20by%20request%20parameter%20with%20password%20disclosure.md)
+> [Solution](https://github.com/toanduneee/p0rtSw1gg3r/blob/main/1.%20Server-side%20vulnerabilities/Lab6%3A%20User%20ID%20controlled%20by%20request%20parameter%20with%20password%20disclosure.md)
 
 # 3. Authentication
-* Lỗ hổng xác thực (Authentication vulnerabilities)
-* Về mặt khái niệm, các lỗ hổng xác thực rất dễ hiểu. Tuy nhiên, chúng thường rất nghiêm trọng vì mối quan hệ rõ ràng giữa xác thực và bảo mật.
+* Hay còn gọi là Lỗ hổng xác thực
+* Về mặt khái niệm, các lỗ hổng Authentication rất dễ hiểu. Tuy nhiên, chúng thường rất nghiêm trọng vì mối quan hệ rõ ràng giữa xác thực và bảo mật.
 * Các lỗ hổng xác thực có thể cho phép kẻ tấn công giành quyền truy cập vào dữ liệu và chức năng nhạy cảm. Chúng cũng tạo ra bề mặt tấn công bổ sung cho các cuộc khai thác sâu hơn. Vì lý do này, điều quan trọng là phải học cách xác định và khai thác các lỗ hổng xác thực, cũng như cách vượt qua các biện pháp bảo vệ thông thường.
 * Trong phần này, chúng ta sẽ tìm hiểu sơ qua về:
   * Các cơ chế xác thực phổ biến nhất được các trang web sử dụng.
@@ -143,6 +143,50 @@ https://insecure-website.com/myaccount?id=123
   * Các lỗ hổng cố hữu trong các cơ chế xác thực khác nhau.
   * Các lỗ hổng điển hình phát sinh do việc triển khai không đúng cách.
   * Làm thế nào bạn có thể làm cho các cơ chế xác thực của riêng mình trở nên mạnh mẽ nhất có thể.
+
+## Sự khác biệt giữa xác thực (authentication) và ủy quyền (authorization) là gì?
+* Xác thực là quá trình xác minh xem một người dùng có đúng là người mà họ tự nhận hay không. Ủy quyền liên quan đến việc xác minh xem người dùng có được phép thực hiện một việc gì đó hay không.
+* Ví dụ, xác thực sẽ xác định xem một người nào đó đang cố gắng truy cập trang web bằng tên người dùng `Carlos123` có thực sự là người đã tạo tài khoản đó hay không.
+* Khi `Carlos123` đã được xác thực, các quyền của họ sẽ xác định những gì họ được ủy quyền làm. Ví dụ, họ có thể được ủy quyền truy cập thông tin cá nhân của những người dùng khác hoặc thực hiện các hành động như xóa tài khoản của người dùng khác.
+* Èo lằng nhằng vậy, nói dễ hiểu là:
+  * Xác thực: Bạn là ai?
+  * Ủy quyền: Bạn được làm gì?
+
+## Brute-force attacks
+* Tấn công Brute-force là khi kẻ tấn công sử dụng một hệ thống thử và sai để đoán thông tin đăng nhập hợp lệ của người dùng. Các cuộc tấn công này thường được tự động hóa bằng cách sử dụng wordlists (danh sách từ) gồm tên người dùng và mật khẩu. Tự động hóa quá trình này, đặc biệt là sử dụng các công cụ chuyên dụng, cho phép kẻ tấn công thực hiện số lượng lớn các lần thử đăng nhập với tốc độ cao.
+* Brute-force không phải lúc nào cũng chỉ là việc đoán ngẫu nhiên tên người dùng và mật khẩu. Bằng cách sử dụng logic cơ bản hoặc thông tin có sẵn công khai, kẻ tấn công có thể tinh chỉnh các cuộc tấn công brute-force để đưa ra những phán đoán có cơ sở hơn nhiều. Điều này làm tăng đáng kể hiệu quả của các cuộc tấn công đó. Các trang web chỉ dựa vào việc đăng nhập bằng mật khẩu làm phương pháp xác thực duy nhất có thể rất dễ bị tấn công nếu họ không triển khai các biện pháp bảo vệ brute-force đầy đủ.
+
+## Brute-forcing usernames
+* Tên người dùng đặc biệt dễ đoán nếu chúng tuân theo một khuôn mẫu dễ nhận biết, chẳng hạn như địa chỉ email. Ví dụ, rất phổ biến khi thấy các tài khoản đăng nhập của doanh nghiệp có định dạng `tên.họ@têncôngty.com`. Tuy nhiên, ngay cả khi không có khuôn mẫu rõ ràng, đôi khi các tài khoản có đặc quyền cao cũng được tạo bằng các tên người dùng dễ đoán, chẳng hạn như `admin` hoặc `administrator`.
+* Trong quá trình kiểm tra, hãy xem liệu trang web có công khai tên người dùng tiềm năng hay không. Ví dụ: bạn có thể truy cập hồ sơ người dùng mà không cần đăng nhập không? Ngay cả khi nội dung thực tế của hồ sơ bị ẩn, tên được sử dụng trong hồ sơ đôi khi lại chính là tên người dùng để đăng nhập. Bạn cũng nên kiểm tra các phản hồi HTTP để xem có địa chỉ email nào bị lộ không. Đôi khi, các phản hồi chứa địa chỉ email của những người dùng có đặc quyền cao, chẳng hạn như quản trị viên hoặc bộ phận IT Support.
+
+## Brute-forcing passwords
+* Mật khẩu cũng có thể bị tấn công bằng Brute-force, với mức độ khó khăn khác nhau tùy thuộc vào độ mạnh của mật khẩu. Nhiều trang web áp dụng một số hình thức chính sách mật khẩu, buộc người dùng phải tạo mật khẩu có độ phức tạp cao, về mặt lý thuyết, sẽ khó bị bẻ khóa chỉ bằng Brute-force. Điều này thường yêu cầu mật khẩu phải có:
+  * Số lượng ký tự tối thiểu
+  * Sự kết hợp giữa chữ cái viết hoa và viết thường
+  * Ít nhất một ký tự đặc biệt
+* Tuy nhiên, dù các mật khẩu có độ phức tạp cao rất khó để máy tính bẻ khóa, chúng ta có thể lợi dụng sự hiểu biết cơ bản về hành vi của con người để khai thác những lỗ hổng mà người dùng vô tình tạo ra. Thay vì tạo một mật khẩu mạnh với sự kết hợp ngẫu nhiên của các ký tự, người dùng thường lấy một mật khẩu dễ nhớ và cố gắng điều chỉnh nó để phù hợp với chính sách mật khẩu. Ví dụ, nếu mật khẩu `mypassword` không được chấp nhận, người dùng có thể thử những mật khẩu như `Mypassword1!` hoặc `Myp4$$w0rd`.
+* Trong trường hợp chính sách yêu cầu người dùng thay đổi mật khẩu thường xuyên, người dùng cũng thường chỉ thực hiện những thay đổi nhỏ, dễ đoán đối với mật khẩu ưa thích của họ. Chẳng hạn, `Mypassword1!` trở thành `Mypassword1?` hoặc `Mypassword2!`.
+* Sự hiểu biết về các thông tin đăng nhập có khả năng bị đoán và các mẫu dễ đoán này có nghĩa là các cuộc tấn công brute-force thường có thể tinh vi hơn nhiều, và do đó hiệu quả hơn, so với việc chỉ lặp lại mọi sự kết hợp ký tự có thể.
+
+## Username enumeration (Liệt kê tên người dùng)
+* Liệt kê tên người dùng là khi kẻ tấn công có thể quan sát những thay đổi trong hành vi của trang web để xác định xem một tên người dùng có hợp lệ hay không.
+* Việc liệt kê tên người dùng thường xảy ra trên trang login, ví dụ: khi bạn nhập một tên người dùng hợp lệ nhưng mật khẩu không chính xác, hoặc trên các biểu mẫu đăng ký khi bạn nhập một tên người dùng đã có người sử dụng. Điều này làm giảm đáng kể thời gian và công sức cần thiết để tấn công Brute-force vào tài khoản vì kẻ tấn công có thể nhanh chóng tạo ra một danh sách ngắn các tên người dùng hợp lệ.
+
+### Lab: Username enumeration via different responses
+> [Lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/authentication-apprentice/authentication/password-based/lab-username-enumeration-via-different-responses)
+>
+> Solution
+
+---
+## Vượt qua xác thực hai yếu tố
+* Đôi khi, việc triển khai xác thực hai yếu tố (2FA) có nhiều sai sót đến mức nó có thể bị vượt qua hoàn toàn.
+* Nếu người dùng được yêu cầu nhập mật khẩu trước, sau đó được yêu cầu nhập mã xác minh trên một trang riêng, thì người dùng đó đã ở trạng thái "đã đăng nhập" trước khi họ nhập mã xác minh. Trong trường hợp này, bạn nên kiểm tra xem liệu có thể trực tiếp bỏ qua bước xác thực thứ hai để truy cập các trang chỉ dành cho người dùng đã đăng nhập hay không. Thỉnh thoảng, bạn sẽ thấy rằng trang web không thực sự kiểm tra xem bạn đã hoàn thành bước thứ hai hay chưa trước khi tải trang.
+
+### Lab: 2FA simple bypass
+> [Lab](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/authentication-apprentice/authentication/multi-factor/lab-2fa-simple-bypass)
+>
+> Solution
 
 # Server-side request forgery (SSRF)
 
